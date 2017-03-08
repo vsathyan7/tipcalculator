@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "62C75516838A89627CF8FA9FEB256CB720B70014",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "62C75516838A89627CF8FA9FEB256CB720B70014" : 9223372036854775807,
+    "2E77E38D88B7AB798625920B6526449B972C129D" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "47E21C52-AE97-4D64-BC1C-FEA97A2D54C6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "62C75516838A89627CF8FA9FEB256CB720B70014" : "Tipcalc\/",
+    "2E77E38D88B7AB798625920B6526449B972C129D" : "VSStepper\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Tipcalc",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Tipcalc.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vsathyan7\/VSSTepper.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2E77E38D88B7AB798625920B6526449B972C129D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vsathyan7\/tipcalculator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "62C75516838A89627CF8FA9FEB256CB720B70014"
+    }
+  ]
+}

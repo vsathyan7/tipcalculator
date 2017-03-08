@@ -1,0 +1,16 @@
+PODS:
+  - VSStepper (1.0)
+
+DEPENDENCIES:
+  - VSStepper (from `../VSSTepper`)
+
+EXTERNAL SOURCES:
+  VSStepper:
+    :path: ../VSSTepper
+
+SPEC CHECKSUMS:
+  VSStepper: e30d3d0fa977ffdbce771261400c5586577c36ae
+
+PODFILE CHECKSUM: 9920a5061dfc6fc003074d30249f5c50c03e4bb2
+
+COCOAPODS: 1.2.0
