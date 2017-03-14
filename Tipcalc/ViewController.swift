@@ -40,11 +40,19 @@ class ViewController: UIViewController {
         formatter.numberStyle = .currency
         
         splitStepper.addTarget(self, action: #selector(ViewController.splitVAlueChanged), for: .valueChanged)
-        splitStepper.labelFont = UIFont(name: "HelveticaNeue-Bold", size: 17.0)!
+        splitStepper.labelFont = UIFont(name: "HelveticaNeue-Bold", size: 22.0)!
+        splitStepper.buttonsFont = UIFont(name: "HelveticaNeue-Bold", size: 22.0)!
+        
+        
+        UISegmentedControl.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: UIControlState.selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.black], for: UIControlState.normal)
+       // view.addBackground()
+
     }
     
 
     override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.navigationItem.title = "Tip Calc"
         checkFile()
         dictionary = NSMutableDictionary(contentsOfFile: percentPlistPath)
         read()
@@ -59,15 +67,15 @@ class ViewController: UIViewController {
     
     @IBAction func splitVAlueChanged(_ sender: Any) {
     
-        let splitNo = Double(splitStepper.value)
+ //       let splitNo = Double(splitStepper.value)
         
-        if splitNo <= 1 {
-            splitAmount.isHidden = true
-            splitAmountLabel.isHidden = true
-        } else {
-            splitAmount.isHidden = false
-            splitAmountLabel.isHidden = false
-        }
+//        if splitNo <= 1 {
+//            splitAmount.isHidden = true
+//            splitAmountLabel.isHidden = true
+//        } else {
+//            splitAmount.isHidden = false
+//            splitAmountLabel.isHidden = false
+//        }
         calcTip()
     }
     
@@ -90,7 +98,8 @@ class ViewController: UIViewController {
             totalLabel.text = "\(totalAmt)"
         }
         
-   
+//        print(splitValue)
+//        print(billAmt)
         if splitValue <= 1 {
             splitAmount.isHidden = true
             splitAmountLabel.isHidden = true
@@ -150,6 +159,13 @@ class ViewController: UIViewController {
         tipControl.setTitle(percent2+"%", forSegmentAt: 1)
         tipControl.setTitle(percent3+"%", forSegmentAt: 2)
 
+    }
+    
+    @IBAction func cancelEdit(segue:UIStoryboardSegue){
+    }
+    
+    @IBAction func saveEdit(segue:UIStoryboardSegue){
+        //tableView.reloadData()
     }
     
 //    func write() {

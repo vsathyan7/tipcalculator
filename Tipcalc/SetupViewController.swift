@@ -11,8 +11,8 @@ import UIKit
 class SetupViewController: UIViewController {
 
     @IBOutlet weak var tip1: UITextField!
-
     @IBOutlet weak var tip2: UITextField!
+    
     @IBOutlet weak var tip3: UITextField!
     
     
@@ -39,7 +39,23 @@ class SetupViewController: UIViewController {
     
     @IBAction func updateTipPercent(_ sender: Any) {
         
-        view.endEditing(true)    
+        view.endEditing(true)
+        let tipPercent1 = Double(tip1.text!) ?? 0
+        let tipPercent2 = Double(tip2.text!) ?? 0
+        let tipPercent3 = Double(tip3.text!) ?? 0
+        
+        if ( tipPercent1 == 0 || tipPercent2 == 0 || tipPercent3 == 0){
+            alertMessage(header: "Invalid %", body: "One of the % entered is invalid. It must be valid decimal and no '%' sign or special characters allowed")
+            
+        } else {
+            savePercentValues(per1: NSNumber(value:tipPercent1), per2: NSNumber(value:tipPercent2), per3: NSNumber(value:tipPercent3))
+        }
+        
+    }
+    
+     func updateTipPercent() {
+        
+        view.endEditing(true)
         let tipPercent1 = Double(tip1.text!) ?? 0
         let tipPercent2 = Double(tip2.text!) ?? 0
         let tipPercent3 = Double(tip3.text!) ?? 0
@@ -96,15 +112,19 @@ class SetupViewController: UIViewController {
         dictionary.write(toFile: percentPlistPath, atomically: true)
         print("Writtent to plist")
     }
+    
+    
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "saveEdit" {
+            updateTipPercent()
+        }
+        else{
+            
+        }
     }
-    */
+    
+    
 
 }

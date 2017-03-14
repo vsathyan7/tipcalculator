@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F5242981E6DE20C00A41438 /* TipPercents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F5242971E6DE20C00A41438 /* TipPercents.plist */; };
 		1F52429A1E6DF2E000A41438 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5242991E6DF2E000A41438 /* SetupViewController.swift */; };
+		1FB042B21E76630A002A433A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB042B11E76630A002A433A /* UIViewExtension.swift */; };
 		1FD3F7551E6D335E00B6639A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3F7541E6D335E00B6639A /* AboutViewController.swift */; };
 		1FDF55B01E6D00FD00895E10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDF55AF1E6D00FD00895E10 /* AppDelegate.swift */; };
 		1FDF55B21E6D00FD00895E10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDF55B11E6D00FD00895E10 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		1F5242971E6DE20C00A41438 /* TipPercents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TipPercents.plist; sourceTree = "<group>"; };
 		1F5242991E6DF2E000A41438 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		1FB042B11E76630A002A433A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		1FD3F7541E6D335E00B6639A /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		1FDF55AC1E6D00FD00895E10 /* Tipcalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipcalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FDF55AF1E6D00FD00895E10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				1FDF55AF1E6D00FD00895E10 /* AppDelegate.swift */,
 				1FDF55B11E6D00FD00895E10 /* ViewController.swift */,
 				1FDF55B31E6D00FD00895E10 /* Main.storyboard */,
+				1FB042B11E76630A002A433A /* UIViewExtension.swift */,
 				1F5242991E6DF2E000A41438 /* SetupViewController.swift */,
 				1FD3F7541E6D335E00B6639A /* AboutViewController.swift */,
 				1FDF55B61E6D00FD00895E10 /* Assets.xcassets */,
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB042B21E76630A002A433A /* UIViewExtension.swift in Sources */,
 				1F52429A1E6DF2E000A41438 /* SetupViewController.swift in Sources */,
 				1FD3F7551E6D335E00B6639A /* AboutViewController.swift in Sources */,
 				1FDF55B21E6D00FD00895E10 /* ViewController.swift in Sources */,
@@ -366,9 +370,10 @@
 				DEVELOPMENT_TEAM = D32WP4C66J;
 				INFOPLIST_FILE = Tipcalc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vsathyan.Tipcalc;
+				PRODUCT_BUNDLE_IDENTIFIER = TipCalcV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -382,9 +387,10 @@
 				DEVELOPMENT_TEAM = D32WP4C66J;
 				INFOPLIST_FILE = Tipcalc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = vsathyan.Tipcalc;
+				PRODUCT_BUNDLE_IDENTIFIER = TipCalcV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
