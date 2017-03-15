@@ -8,13 +8,15 @@
 
 import UIKit
 
-class SetupViewController: UIViewController {
+class SetupViewController: UIViewController,UIScrollViewDelegate {
 
     @IBOutlet weak var tip1: UITextField!
     @IBOutlet weak var tip2: UITextField!
     
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var tip3: UITextField!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let percentPlistPath = NSHomeDirectory()+"/Documents/TipPercents.plist"
     let fileManager = FileManager.default
@@ -25,7 +27,12 @@ class SetupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        scrollView.delegate = self
+        scrollView.minimumZoomScale = 0.1
+        scrollView.maximumZoomScale = 4.0
+        scrollView.zoomScale = 1.0
+        
         checkFile()
         dictionary = NSMutableDictionary(contentsOfFile: percentPlistPath)
         read()
@@ -67,6 +74,10 @@ class SetupViewController: UIViewController {
             savePercentValues(per1: NSNumber(value:tipPercent1), per2: NSNumber(value:tipPercent2), per3: NSNumber(value:tipPercent3))
         }
         
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return contentView
     }
     
     func alertMessage(header:String, body:String){

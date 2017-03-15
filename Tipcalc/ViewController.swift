@@ -9,9 +9,10 @@
 import UIKit
 import VSStepper
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var splitStepper: VSStepper!
+    @IBOutlet weak var contentView: UIView!
 
     @IBOutlet weak var tipLabel: UILabel!
     
@@ -21,6 +22,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var splitAmountLabel: UILabel!
     @IBOutlet weak var splitAmount: UILabel!
+
+    @IBOutlet var scrollView: UIScrollView!
         
     let formatter = NumberFormatter()
     
@@ -39,19 +42,48 @@ class ViewController: UIViewController {
         formatter.locale = Locale.current
         formatter.numberStyle = .currency
         
+
         splitStepper.addTarget(self, action: #selector(ViewController.splitVAlueChanged), for: .valueChanged)
-        splitStepper.labelFont = UIFont(name: "HelveticaNeue-Bold", size: 22.0)!
-        splitStepper.buttonsFont = UIFont(name: "HelveticaNeue-Bold", size: 22.0)!
-        
+  
         
         UISegmentedControl.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: UIControlState.selected)
         UISegmentedControl.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.black], for: UIControlState.normal)
-       // view.addBackground()
 
+       // view.addBackground()
+        
+        
+        scrollView.delegate = self
+        scrollView.minimumZoomScale = 0.1
+        scrollView.maximumZoomScale = 4.0
+        scrollView.zoomScale = 1.0
+        
+       // billField.keyboardType = UIKeyboardType.numbersAndPunctuation
+        
     }
     
+    
+    func setFontSize(){
+        
+        var fontSize = 10
+        let fontName = "HelveticaNeue-Bold"
+        
+        if (UIDevice.current.orientation.isLandscape) {
+            if (self.view.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.compact){
+                fontSize = 17
+            }
+        }
+        
+        UISegmentedControl.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: fontName, size: CGFloat(fontSize))!], for: UIControlState.normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: fontName, size: CGFloat(fontSize))!], for: UIControlState.selected)
+
+        splitStepper.labelFont = UIFont(name: fontName, size: CGFloat(fontSize))!
+        splitStepper.buttonsFont = UIFont(name: fontName, size: CGFloat(fontSize))!
+        
+        
+    }
 
     override func viewDidAppear(_ animated: Bool) {
+        print("view did appear ****")
         self.tabBarController?.navigationItem.title = "Tip Calc"
         checkFile()
         dictionary = NSMutableDictionary(contentsOfFile: percentPlistPath)
@@ -64,6 +96,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return contentView
+    }
     
     @IBAction func splitVAlueChanged(_ sender: Any) {
     
@@ -113,7 +148,6 @@ class ViewController: UIViewController {
         
     }
     
-    
     @IBAction func calculateTip(_ sender: Any) {
         calcTip()
     }
@@ -125,6 +159,7 @@ class ViewController: UIViewController {
         read()
         
     }
+
    
     func checkFile() {
         
@@ -166,6 +201,10 @@ class ViewController: UIViewController {
     
     @IBAction func saveEdit(segue:UIStoryboardSegue){
         //tableView.reloadData()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+          setFontSize()
     }
     
 //    func write() {

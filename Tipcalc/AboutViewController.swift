@@ -12,11 +12,10 @@ class AboutViewController: UIViewController {
 
     @IBOutlet weak var LinkedinView: UIWebView!
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var contentView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
 //        let urlRequest = NSURLRequest(url: NSURL(string: "https://www.linkedin.com/in/sathya-venkataraman-1667041")! as URL)
 //        LinkedinView.loadRequest(urlRequest as URLRequest)
@@ -35,7 +34,6 @@ class AboutViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
